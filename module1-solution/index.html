@@ -15,16 +15,17 @@
      <h1>Lunch Checker</h1>
 
          <div class="form-group">
+             <p>Note: {{ note }}</p>
              <input id="lunch-menu" type="text"
-             placeholder="list comma separated dishes you usually have for lunch"
+             placeholder="{{ placeholder1 }}" ng-model="menuList"
              class="form-control">
          </div>
          <div class="form-group">
-             <button class="btn btn-default">Check If Too Much</button>
+             <button class="btn btn-default" ng-click="check(menuList)">Check If Too Much</button>
          </div>
          <div class="form-group message">
            <!-- Your message can go here. -->
-           {{ nombre }}
+           {{ message }}
          </div>
    </div>
 
