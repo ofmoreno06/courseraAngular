@@ -11,27 +11,27 @@ angular.module('LunchCheck',[])
 // using the $inject property to protect services from minification
 LunchCheckController.$inject = ['$scope'];
 
-// making LunchCheckController function
+//----------------------- LunchCheckController function -----------------------
 function LunchCheckController($scope){
   $scope.placeholder1 = "list comma separated dishes you usually have for lunch";
   $scope.menuList = "";
-  $scope.message = "";
   $scope.note = "Empty items are not valid to count, i.e. (item1,,,item2) are just 2 items.";
 
   $scope.check = function(listToCheck){
     if (listToCheck != 0){
       var items = chopString(listToCheck);
       $scope.message = items <= 3 ? "Enjoy!" : "Too much!";
+      $scope.textColor = "green";
     } else {
         $scope.message = "Please enter data first";
+        $scope.textColor = "red";
       }
   };
-
+  
   var chopString = function(stringToChop){
-
     var arrayOfStrings = stringToChop.split(/,\s*\w/g);
     return arrayOfStrings.length;
   };
-}
+} //------------------------ End LunchCheckController ------------------------
 
 })();
