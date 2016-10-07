@@ -14,14 +14,14 @@ for avoiding local variables bleeding out to global scope */
   NarrowItDownCotroller.$inject = ['MenuSearchService'];
   function NarrowItDownCotroller(MenuSearchService){
     var narrow = this;
+
     narrow.searchTerm="";
-    narrow.found = [];
 
     narrow.narrowIt = function (){
       MenuSearchService.getMatchedMenuItems(narrow.searchTerm)
       .then(function(response){
         narrow.found = response;
-        console.log("reponse", narrow.found);
+        console.log("found " + narrow.found.length + " items");
       }).catch(function (error) {
         console.log("Something went terribly wrong.");
       });
@@ -38,20 +38,23 @@ for avoiding local variables bleeding out to global scope */
     var service = this;
 
     service.getMatchedMenuItems = function(searchTerm){
+
       // Retrieve the list of all menu items and then filter the result
-      return $http({
-        method: "GET",
-        url: ApiBasePath + "/menu_items.json"
-      }).then(function(result){
-        var foundItems = [];
-        var allItems = result.data.menu_items;
-        allItems.forEach(function(item){
-            if (item.description.toLowerCase().indexOf(searchTerm) !== -1){
-              foundItems.push(item);
-            };
+        return $http({
+          method: "GET",
+          url: ApiBasePath + "/menu_items.json"
+        }).then(function(result){
+          var allItems = result.data.menu_items;
+          var foundItems = [];
+          if (searchTerm.length !== 0){
+            allItems.forEach(function(item){
+                if (item.description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1){
+                  foundItems.push(item);
+                };
+            });
+          }
+          return foundItems;
         });
-        return foundItems;
-      });
     };
   };// END MenuSearchService
 
@@ -61,8 +64,8 @@ for avoiding local variables bleeding out to global scope */
       {
         templateUrl: 'found-items.template.html',
         scope: {
-            foundedItems: '<'
-            
+            foundedItems: '<',
+            onRemove: '&'
         },
         controller: foundItemsController,
         bindToController: true,
