@@ -75,7 +75,9 @@ for avoiding local variables bleeding out to global scope */
     return ddo;
   };
 
+  // Directive controller
   function foundItemsController(){
+    // empty - Dont manipulate data from directives!
   };
 
 })();
