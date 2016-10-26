@@ -8,12 +8,38 @@
     <link rel="stylesheet" href="styles/styles.css">
   </head>
 <body>
-   <div>
+   <div class="container">
+   <!-- ############### NAVBAR ######################################### -->
+    <nav class="nav navbar-default">
+     <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" ui-sref="home">Menu App</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a ui-sref="home">Inicio</a></li>
+          <li><a ui-sref="items">Items</a></li>
+          <li><a ui-sref="categories">Categorías</a></li>
+        </ul>
+     </div>
+    </nav>
+    <!-- ############################################################### -->
+
+    <ui-view></ui-view>
+
    </div>
 
   <!-- Adding script files -->
-  <script type="text/javascript" src="script/angular.js"></script>
-  <script type="text/javascript" src="script/menuapp.module.js"></script>
-  <script type="text/javascript" src="script/angular-ui-router.js"></script>
+  <script type="text/javascript" src="lib/angular.min.js"></script>
+  <script type="text/javascript" src="lib/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="src/menuapp.module.js"></script>
+    <script type="text/javascript" src="src/data.module.js"></script>
+
+  <!-- src files -->
+  <script type="text/javascript" src="src/routes.js"></script>
+  <script type="text/javascript" src="src/categories.component.js"></script>
+  <script type="text/javascript" src="src/items.component.js"></script>
+  <script type="text/javascript" src="src/menudata.service.js"></script>
+
+
 </body>
 </html>
