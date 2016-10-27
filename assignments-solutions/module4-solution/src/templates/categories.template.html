@@ -1,5 +1,10 @@
-<h1>vista de categorias</h1>
+<h1>Vista de categorias</h1>
 
-<ul>
-  <li ng-repeat="category in $ctrl.categories">{{ category.name }}</li>
-</ul>
+<p>
+  hola {{ catCtrl.nombre }}
+  <button class"btn btn-primary" ng-click="catCtrl.dame()">catCtrl.list</button>
+</p>
+
+<categories-list data="catCtrl.lista"></categories-list>
+
+<!-- <ui-view></ui-view> -->

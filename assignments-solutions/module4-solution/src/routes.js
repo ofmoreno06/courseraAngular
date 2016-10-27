@@ -11,10 +11,18 @@ function RoutesConfig($stateProvider, $urlRouteProvider){
     url: '/',
     templateUrl: 'src/templates/home.template.html'
   })
+
   .state('categories',{
     url: '/categories',
-    templateUrl: 'src/templates/categories.template.html'
+    templateUrl: 'src/templates/categories.template.html',
+    controller: 'CategoriesController as catCtrl'
+    // resolve: {
+    //   categories: ['MenuDataService', function(MenuDataService){
+    //     return MenuDataService.getAllCategories();
+    //   }]
+    // }
   })
+
   .state('items',{
     url: '/items',
     templateUrl: 'src/templates/items.template.html'

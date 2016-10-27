@@ -10,7 +10,7 @@ function MenuDataService ($http, ApiBasePath){
   var service = this;
 
   service.getAllCategories = function(){
-    return http(
+    return $http(
       { method: 'GET',
         url: ApiBasePath + '/categories.json'})
     .then(function(result){
@@ -20,7 +20,7 @@ function MenuDataService ($http, ApiBasePath){
   }
 
   service.getItemsForCategory = function(categoryShortName){
-    return http(
+    return $http(
       { method: 'GET',
         url: ApiBasePath + '/menu_items.json',
         params: {category: categoryShortName}
@@ -31,6 +31,7 @@ function MenuDataService ($http, ApiBasePath){
     });
   }
 
+  return service;
 }
 
 })();    // END IIFE
