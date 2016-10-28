@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<div class="container">
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>
+        Category
+      </th>
+      <th>
+        Short name
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in $ctrl.data">
+      <td>
+        <a ui-sref="items({categoryID: item.short_name})">{{ item.name }}</a>
+      </td>
+      <td>
+        {{ item.short_name }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

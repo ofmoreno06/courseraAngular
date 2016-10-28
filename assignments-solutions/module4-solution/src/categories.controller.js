@@ -4,21 +4,17 @@
 angular.module('MenuApp')
 .controller('CategoriesController', CategoriesController);
 
-CategoriesController.$inject = ['MenuDataService'];
-function CategoriesController(MenuDataService){
+CategoriesController.$inject = ['MenuDataService', 'categories'];
+function CategoriesController(MenuDataService, categories){
   var catCtrl = this;
-  catCtrl.lista = [];
-  MenuDataService.getAllCategories().then(function(response){
-    catCtrl.lista = response;
-    console.log('catCtrl DentroRespuesta', catCtrl.lista);
-  });
-  console.log('catCtrl fueraRespuesta', catCtrl.lista);
-  catCtrl.nombre = "Oscar";
-  catCtrl.dame = function(){
-    console.log('catCtrl fueraRespuesta', catCtrl.lista);
-  }
+  catCtrl.lista = categories;
+  // MenuDataService.getItemsForCategory("L").then(
+  //   function(result){
+  //     catCtrl.oneCategory = result;
+  //     console.log('One category', catCtrl.oneCategory);
+  //   }, function(error){
+  //     console.error(error);
+  // });
 }
-
-
 
 })();
