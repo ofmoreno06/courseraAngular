@@ -4,10 +4,10 @@ Repository for course [Single Web Pages with AngularJS.] (https://www.coursera.o
 
 Assignment Solutions:
 
-[assignment1] (https://ofmoreno06.github.io/courseraAngular/assignments-solutions/module1-solution)
+[assignment1] (https://ofmorenor.github.io/Single-Web-Pages-with-AngularJS--COURSERA-assignments/assignments-solutions/module1-solution/)
 
-[assignment2] (https://ofmoreno06.github.io/courseraAngular/assignments-solutions/module2-solution)
+[assignment2] (https://ofmorenor.github.io/Single-Web-Pages-with-AngularJS--COURSERA-assignments/assignments-solutions/module2-solution/)
 
-[assignment3] (https://ofmoreno06.github.io/courseraAngular/assignments-solutions/module3-solution)
+[assignment3] (https://ofmorenor.github.io/Single-Web-Pages-with-AngularJS--COURSERA-assignments/assignments-solutions/module3-solution/)
 
-[assignment4] (https://ofmoreno06.github.io/courseraAngular/assignments-solutions/module4-solution)
+[assignment4] (https://ofmorenor.github.io/Single-Web-Pages-with-AngularJS--COURSERA-assignments/assignments-solutions/module4-solution/)
